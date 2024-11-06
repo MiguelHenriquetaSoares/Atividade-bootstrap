@@ -1,90 +1,80 @@
-// Variáveis
-$primary-color: #fd0000;
-$background-color: #f4f4f4;
-$text-color: #333;
-$album-bg-color: white;
-
-// Estilos Globais
 body {
     font-family: Arial, sans-serif;
-    margin: 110;
-    padding: 1000;
-    background-color: $background-color;
-    color: $text-color;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-// Header
 .header {
-    background-color: $primary-color;
+    background-color: #fd0000;
     color: white;
     text-align: center;
     padding: 80px;
-
-    h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
-
-    p {
-        font-size: 1.2em;
-    }
 }
 
-// Container
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header p {
+    font-size: 1.2em;
+}
+
 .container {
     display: flex;
-    flex-wrap: wrap; // Permite que os cards se movam para a próxima linha
-    justify-content: center; // Centraliza os cards
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
-
-    .album {
-        background: $album-bg-color;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        margin: 10px;
-        padding: 150px; // Ajuste o padding aqui para aumentar a altura
-        width: calc(33.33% - 20px); // Largura de 1/3 do contêiner, considerando margens
-        box-sizing: border-box; // Para incluir padding e borda na largura total
-        text-align: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin: 10px 0;
-        }
-
-        p {
-            font-size: 1em;
-            color: #666;
-        }
-    }
 }
 
-// Responsividade
+.album {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 30px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.album img {
+    width: 100%; 
+    height: 320px; 
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.album h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.album p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Responsividade */
 @media (max-width: 600px) {
     .album {
-        width: 90%; // Para telas pequenas, os cards ocupam 90% da largura
+        width: 90%;
+        padding: 10px;
     }
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
     .album {
-        width: calc(50% - 20px); // Para telas médias, dois cards por linha
+        width: calc(50% - 20px);
+        padding: 15px;
     }
 }
 
 @media (min-width: 1025px) {
     .album {
-        width: calc(33.33% - 20px); // Para telas grandes, três cards por linha
+        width: calc(33.33% - 20px);
+        padding: 20px;
     }
 }
-
-
-   
-    
-       
